@@ -1,0 +1,11 @@
+{
+  "fieldType" : 1,
+  "fieldValueOptions" : { },
+  "formatType" : "PERCENT",
+  "label" : "MinMarginThreshold",
+  "labelTranslations" : {
+    "" : "MinMarginThreshold"
+  },
+  "readOnly" : false,
+  "requiredField" : false
+}

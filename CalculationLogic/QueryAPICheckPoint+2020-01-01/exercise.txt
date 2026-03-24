@@ -1,0 +1,44 @@
+Create a logic called QueryAPICheckPoint and create the following elements.  Use the out binding to pass return values from one element to the other.  ( NOTE:  This is a typical Price waterfall calculation that you will do in many upcoming labs and exams )
+NOTE: Make sure that you follow naming requirements for all logics, elements and inputs.
+NOTE: Do not round any results, nor add any text suffix to element results.
+
+
+LOGIC ELEMENTS
+Create the following elements.  Additional elements can be created to help with calculations
+
+
+Customer
+Return the Pricefx customerID value cd-00004.  This will be the ID you will be using to get Customer information for the rest of the logic
+
+
+Results
+Create an Element called results and use QueryAPI and Joins to return the specific attribute values in one query from the following tables.  (Important: This element should only have one query)
+Note: You will have to get the appropriate Product and Customer information in this query to satisfy all the join conditions
+The following are all the values you will need to return to use in additional Elements.  All values are optional except Base Price.  (This means if no value is returned for the specific table, it should not cause the whole query to return null).
+
+
+BasePrice - Using the Product SKU, return the Cost of the product found by looking up the  Average Cost attribute in the Product Cost, Product Extension table.MarginPCT Using the Product Group of the Product table, return the percent value from the Margin Adjustment Customer Parameter table.AttributePCT- Using the Product Lifecycle of the Product table, return the percent value from the Attribute Adjustment Customer Parameter table.PackagingPCT- Using the Product Size of the Product table, return the percent value from the Packaging Adjustment Customer Parameter table.TaxTariffPCT- Using the Region of the Customer table, return the percent value from the Tax Adjustment Customer Parameter table.
+
+
+
+
+The Following Elements use the values from the Calculation Element
+BasePrice
+Return the value of AvgCost from the Calculations
+MarginAbs
+Return the value of 
+BasePrice * MarginPCT
+AttributeAbs
+ Return the value of BasePrice  * AttributePCT
+PackagingAbs
+Return the value of BasePrice  * PackagingPCT
+TaxTariffAbs
+Return the value of BasePrice  * TaxTariffPCT
+List Price
+ Return the following  + BasePrice + MarginAbs + AttributeAbs+ PackagingAbs+TaxTariffAbs
+Gross Margin
+Return the value of  (ListPrice - BasePrice ) / ListPrice
+
+
+TESTING AND RESULTS
+Set the Product in Context to "MB-0004"Set the Customer element to return "CD-00004"Execute the Code and note the result for Gross Margin in the white text entry to the leftSet the Product in Context to "MB-0044"Set the Customer element to return "CD-00015"Execute the Code and note the result for Gross Margin in the white text entry to the leftSubmit the resultsDeploy your logic

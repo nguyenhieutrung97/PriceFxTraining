@@ -1,0 +1,10 @@
+{
+  "hideWarnings" : false,
+  "isPlasma" : false,
+  "label" : "MarginApproval",
+  "status" : "ACTIVE",
+  "type" : "MATRIX",
+  "uniqueName" : "MarginApproval",
+  "validAfter" : "2025-12-11",
+  "valueType" : "MATRIX2"
+}
