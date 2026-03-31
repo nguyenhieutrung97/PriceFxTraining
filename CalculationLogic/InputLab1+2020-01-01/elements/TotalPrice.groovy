@@ -1,0 +1,1 @@
+return (out.Price-out.DiscountPct) * out.Quantity

@@ -1,0 +1,15 @@
+{
+  "elements" : [ {
+    "combinationType" : "FUNCTION",
+    "elementLabel" : "Build LPG Steps",
+    "elementName" : "BuildLPGSteps",
+    "elementTimeout" : 0,
+    "excludeFromExport" : false,
+    "hideWarnings" : false,
+    "protectedExpression" : false
+  } ],
+  "status" : "ACTIVE",
+  "uniqueName" : "pricegriditem",
+  "validAfter" : "2020-01-01",
+  "workflowType" : "pricegriditem"
+}

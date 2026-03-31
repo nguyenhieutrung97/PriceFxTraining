@@ -1,0 +1,7 @@
+{
+  "elements" : [ ],
+  "status" : "ACTIVE",
+  "uniqueName" : "Workflow-Lab-Pricelist",
+  "validAfter" : "2020-01-01",
+  "workflowType" : "pricelist"
+}
