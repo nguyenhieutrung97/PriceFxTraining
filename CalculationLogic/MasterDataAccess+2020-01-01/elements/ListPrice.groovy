@@ -1,0 +1,1 @@
+return (out.BasePrice + out.MarginAdj + out.AttributeAdj + out.AttributeAdj + out.PackagingAdj + out.TaxTariffAdj) * out.SeasonalRate

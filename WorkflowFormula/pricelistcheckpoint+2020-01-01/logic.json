@@ -1,15 +1,15 @@
 {
   "elements" : [ {
     "combinationType" : "FUNCTION",
-    "elementLabel" : "WorkflowSteps",
-    "elementName" : "WorkflowSteps",
+    "elementLabel" : "Build Pricelist Steps",
+    "elementName" : "BuildPricelistSteps",
     "elementTimeout" : 0,
     "excludeFromExport" : false,
     "hideWarnings" : false,
     "protectedExpression" : false
   } ],
   "status" : "ACTIVE",
-  "uniqueName" : "pricelist",
+  "uniqueName" : "pricelistcheckpoint",
   "validAfter" : "2020-01-01",
   "workflowType" : "pricelist"
 }

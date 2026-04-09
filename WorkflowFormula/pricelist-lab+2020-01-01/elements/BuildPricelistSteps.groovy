@@ -6,6 +6,7 @@ def pli = qapi.tables().priceListLineItems(priceListId)
 def al = qapi.tables().companyParameterRows("PriceListApprovalLevels")
 def p = qapi.tables().products()
 
+
 def queryData = qapi.source(pli, [pli.sku(), pli."MarginAdjPct"])
     .leftOuterJoin(p, { cols -> [p.BusinessUnit] },
         { cols ->
