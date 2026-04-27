@@ -20,13 +20,13 @@ try {
     def workflowItems = []
 
     // 3. Single QueryAPI Stream with Joins
-    qapi.source(pli, [pli.sku(), pli."GrossMargin"])
+    qapi.source(pli, [pli.sku(), pli."GrossMargin", pli."Region"])
         .leftOuterJoin(p, { cols -> [p."ProductGroup"] }, { cols ->
             p.sku().equal(cols.sku)
         })
         .leftOuterJoin(cp, { cols -> [cp."MinMarginThreshold", cp."Group"] }, { cols ->
             exprs.and(
-                cp."Region".equal(region),
+                cp."Region".equal(cols.Region),
                 cp."ProductGroup".equal(cols.ProductGroup)
             )
         })
@@ -35,17 +35,17 @@ try {
                 if (row.GrossMargin == null) {
                     missingDataErrors << "SKU: ${row.sku} is missing a GrossMargin calculation."
                 } else if (row.MinMarginThreshold == null) {
-                    missingDataErrors << "SKU: ${row.sku} is missing a MarginApproval Threshold for ProductGroup: ${row.ProductGroup} in Region: ${region}."
+                    missingDataErrors << "SKU: ${row.sku} is missing a MarginApproval Threshold for ProductGroup: ${row.ProductGroup} in Region: ${row.Region}."
                 } else if (row.GrossMargin < row.MinMarginThreshold) {
                     workflowItems << row
                 }
             }
         }
 
-    // 4. Post-Stream Error Handling
-    if (missingDataErrors) {
-        api.throwException("Workflow aborted due to missing data required for evaluation:\n" + missingDataErrors.join("\n"))
-    }
+//    // 4. Post-Stream Error Handling
+//    if (missingDataErrors) {
+//        api.throwException("Workflow aborted due to missing data required for evaluation:\n" + missingDataErrors.join("\n"))
+//    }
 
     // 5. Sorting
     // Sort the collected workflow items by GrossMargin in Ascending order

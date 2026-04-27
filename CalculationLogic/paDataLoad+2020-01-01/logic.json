@@ -1,0 +1,20 @@
+{
+  "elements" : [ {
+    "allowOverride" : false,
+    "combinationType" : "FUNCTION",
+    "displayOptions" : 16,
+    "elementGroups" : [ "init" ],
+    "elementLabel" : "init",
+    "elementName" : "Init",
+    "elementTimeout" : 0,
+    "excludeFromExport" : false,
+    "hideOnNull" : false,
+    "hideWarnings" : false,
+    "protectedExpression" : false,
+    "summarize" : false
+  } ],
+  "formulaNature" : "paDataLoad",
+  "status" : "ACTIVE",
+  "uniqueName" : "paDataLoad",
+  "validAfter" : "2020-01-01"
+}

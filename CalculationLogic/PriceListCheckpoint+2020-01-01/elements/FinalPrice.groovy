@@ -1,0 +1,1 @@
+return out.ListPrice * out.CalculatedAdjustment * out.CalculatedTax

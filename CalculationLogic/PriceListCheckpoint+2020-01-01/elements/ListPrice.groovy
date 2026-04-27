@@ -1,0 +1,1 @@
+return out.Calculations?.ListPrice ?: 0.0
